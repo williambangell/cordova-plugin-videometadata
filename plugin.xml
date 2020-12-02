@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="com.shahin8r.videometadata"
-        version="0.0.1">
-
+<plugin id="com.shahin8r.videometadata" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
   <name>VideoMetadata</name>
   <author>shahin8r</author>
+  <repo>https://github.com/shahin8r/cordova-plugin-videometadata.git</repo>
   <license>MIT</license>
 
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
 
-  <asset src="www/videometadata.js" target="js/videometadata.js"/>
-
-  <js-module src="www/videometadata.js" name="VideoMetadata">
+  <js-module name="VideoMetadata" src="www/videometadata.js">
     <clobbers target="cordova.plugins.VideoMetadata" />
   </js-module>
 
+  <!-- android -->
   <platform name="android">
-
-    <config-file target="res/xml/config.xml" parent="/*">
+    <config-file target="config.xml" parent="/*">
       <feature name="VideoMetadata">
         <param name="android-package" value="com.shahin8r.plugin.VideoMetadata"/>
       </feature>
@@ -28,9 +24,9 @@
     <source-file src="src/android/VideoMetadata.java" target-dir="src/com/shahin8r/plugin/"/>
   </platform>
 
+  <!-- ios -->
   <platform name="ios">
-    
-    <config-file target="config.xml" parent="/widget">
+    <config-file target="config.xml" parent="/*">
       <feature name="VideoMetadata">
         <param name="ios-package" value="SH8VideoMetadata" />
       </feature>
