@@ -12,6 +12,7 @@
         "ios"
       ]
     },
+    "typings": "./typings/index.d.ts",
     "keywords": [
       "cordova",
       "video"
