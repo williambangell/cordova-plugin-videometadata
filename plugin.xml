@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin id="cordova-plugin-videometadata" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-videometadata" version="0.0.1"
+  xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
   <name>VideoMetadata</name>
   <author>shahin8r</author>
+  <description>VideoMetadata</description>
+  <keywords>cordova,video</keywords>
   <repo>https://github.com/shahin8r/cordova-plugin-videometadata.git</repo>
   <license>MIT</license>
-
-  <engines>
-    <engine name="cordova" version=">=3.4.0"/>
-  </engines>
 
   <js-module name="VideoMetadata" src="www/videometadata.js">
     <clobbers target="cordova.plugins.VideoMetadata" />
   </js-module>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
 
   <!-- android -->
   <platform name="android">
@@ -32,8 +36,11 @@
       </feature>
     </config-file>
 
-    <header-file src="src/ios/SH8VideoMetadata.h" target-dir="VideoMetadataPlugin"/>
-    <source-file src="src/ios/SH8VideoMetadata.m" target-dir="VideoMetadataPlugin"/>
+    <header-file src="src/ios/SH8VideoMetadata.h" />
+    <source-file src="src/ios/SH8VideoMetadata.m" />
+
+    <framework src="AVFoundation.framework" />
+    <framework src="CoreMedia.framework" />
   </platform>
 
 </plugin>
